@@ -208,6 +208,22 @@ footer {
     .container {
         width: 90%;
     }
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .product-item {
+            flex: 1;
+            margin: 1rem 0;
+            text-align: center;
+            transition: transform 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+    
+    
 }
 
 /* Media Queries para Celulares */
