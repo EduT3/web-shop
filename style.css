@@ -203,8 +203,54 @@ footer {
     margin-top: 2rem;
 }
 
-/* Media Queries para Tablets */
+/* Estilo para o menu hambúrguer */
+.menu-icon {
+    display: none; /* Esconder o ícone em telas maiores */
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li {
+    margin: 0 1rem;
+}
+
+/* Media Query para dispositivos móveis */
 @media (max-width: 768px) {
+    .menu {
+        display: none; /* Esconder o menu normal em telas menores */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--primary-color); /* Cor de fundo para o menu */
+        position: absolute;
+        top: 60px; /* Ajustar conforme necessário */
+        left: 0;
+        z-index: 1;
+        padding-top: 10px;
+        border-top: 1px solid var(--accent-color); /* Linha superior */
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block; /* Mostrar o ícone de menu hambúrguer */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+        color: var(--text-color);
+    }
     .container {
         width: 90%;
     }
@@ -222,9 +268,8 @@ footer {
             width: 100%;
             max-width: 300px;
         }
-    
-    
 }
+
 
 /* Media Queries para Celulares */
 @media (max-width: 480px) {
