@@ -3,9 +3,9 @@
     --primary-color: #1c1c1c; /* Preto profundo */
     --secondary-color: #ff6347; /* Tomate */
     --accent-color: #555; /* Cinza escuro */
-    --text-color: #778899; /* Cinza claro */
+    --text-color: #cbd5e1; /* Cinza claro */
     --background-color: #121212; /* Preto */
-    --hero-background: url('/assets/graodeouro.jpeg') no-repeat center center/cover;
+    --hero-background: url('./assets/graodeouro.jpeg') no-repeat center center/cover;
     --gold-gradient: linear-gradient(45deg, #f0e68c, #ffd700, #fffacd); /* Gradiente ouro mais claro */
 }
 
@@ -291,4 +291,37 @@ footer {
     .contact form {
         padding: 1.5rem 0.5rem;
     }
+}
+
+/* Keyboard navigation and responsive media. */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid #d59cff;
+  outline-offset: 4px;
+}
+img { max-width: 100%; height: auto; }
+.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 20; padding: .75rem 1rem; background: #fff; color: #111; }
+.skip-link:focus { top: 1rem; }
+
+header { position: relative; }
+.container { max-width: 1200px; }
+.hero { min-height: 480px; height: auto; padding: 6rem 0; background-image: linear-gradient(#0009, #0009), url('./assets/graodeouro.jpeg'); }
+.hero h2 { font-size: clamp(2rem, 5vw, 3rem); }
+.hero h2, .hero p { color: #fff; }
+.btn { color: #111; font-weight: 700; border-radius: .5rem; text-decoration: none; }
+.btn:hover { background: #ffd28c; }
+.menu-icon { background: transparent; border: 1px solid currentColor; border-radius: .4rem; padding: .4rem .75rem; font: inherit; }
+.contact form:hover { transform: none; }
+.contact textarea { min-height: 130px; resize: vertical; }
+#form-note { text-align: center; margin: 2rem 0 1rem; }
+@media (max-width: 768px) {
+  header h1 { padding-right: 5rem; text-align: left; font-size: 1.6rem; }
+  .menu { display: flex; position: static; }
+  .menu-icon { display: none; }
+  .js .menu { display: none; }
+  .js .menu.active { display: flex; }
+  .js .menu-icon { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+  .product-item:hover, .testimonial-item:hover, .btn:hover { transform: none; }
 }
